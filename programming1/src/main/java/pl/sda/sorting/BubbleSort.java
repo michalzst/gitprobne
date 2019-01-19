@@ -6,6 +6,9 @@ package pl.sda.sorting;
  */
 public class BubbleSort {
     private static void bubbleSort(int[]arraySorted){
+        if(arraySorted.length <= 1) {
+            return;
+        }
         for (int j = arraySorted.length-1; j > 0; j--) {
             for (int i = 0; i <j ; i++) {
                 if (arraySorted[i] > arraySorted[i+1]){

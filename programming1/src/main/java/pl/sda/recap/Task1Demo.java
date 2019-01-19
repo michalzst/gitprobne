@@ -23,7 +23,7 @@ public class Task1Demo {
         //Napisz program, który wypisze co drugi element tablicy przekazanej jako parametr
         int[] arrayToPrint = {8, 5, 15, 300, 32, 48};
 
-        //metoda(arrayToPrint);
+//        metoda(arrayToPrint);
         printOddOrEven(arrayToPrint, true);
 
     }

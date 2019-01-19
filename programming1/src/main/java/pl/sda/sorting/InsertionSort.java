@@ -8,6 +8,10 @@ package pl.sda.sorting;
 
 public class InsertionSort {
     private static void insertionSort(int[] arraySorted) {
+        if(arraySorted.length <= 1) {
+            return;
+        }
+        
         int temp;
         for (int j = arraySorted.length-1; j > 0; j--) {
             for (int i = 0; i <j ; i++) {
