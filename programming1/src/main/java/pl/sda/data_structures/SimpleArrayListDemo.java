@@ -8,7 +8,7 @@ public class SimpleArrayListDemo {
         simpleArrayList.add(3);
         simpleArrayList.add(4);
         System.out.println((simpleArrayList.isEmpty() ? "Empty":"Not empty")+ "\nList size: "+ simpleArrayList.getSize());
-
+        System.out.println(simpleArrayList.get(2));
 
     }
 }
