@@ -1,5 +1,7 @@
 package pl.sda.sorting;
 
+import java.util.Arrays;
+
 /**
  * https://visualgo.net/en/sorting
  * https://www.youtube.com/watch?v=OGzPmgsI-pQ
@@ -8,28 +10,27 @@ package pl.sda.sorting;
 
 public class InsertionSort {
     private static void insertionSort(int[] arraySorted) {
-        if(arraySorted.length <= 1) {
+        if (arraySorted.length <= 1) {
             return;
         }
-        
-        int temp;
-        for (int j = arraySorted.length-1; j > 0; j--) {
-            for (int i = 0; i <j ; i++) {
-                if (arraySorted[i] > arraySorted[i+1]) {
-                    temp = arraySorted[i + 1];
-                    SortingUtils.swap(arraySorted, i, i + 1);
-                }else{
-                    SortingUtils.swap(arraySorted, i, i - 1);
-                }
-                }
-        }
-        for (int array:arraySorted) {
-            System.out.println(array);
+
+        int i, j, unsortedElement;
+        for (j = 1; j < arraySorted.length; j++) {
+            unsortedElement = arraySorted[j];
+            i = j - 1;
+            while (i >= 0 && arraySorted[i] > unsortedElement) {
+                arraySorted[i] = arraySorted[i + 1];
+                j = j - 1;
+            }
+            arraySorted[i + 1] = unsortedElement;
         }
     }
 
     public static void main(String[] args) {
         int arrayToSort[] = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
+        System.out.println("Initial: " + Arrays.toString(arrayToSort));
         insertionSort(arrayToSort);
+        System.out.println("Sorted: " + Arrays.toString(arrayToSort));
+
     }
 }
